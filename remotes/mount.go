@@ -93,7 +93,7 @@ func pushWithAnnotation(ctx context.Context, pusher remotes.Pusher, ref referenc
 	// mount instead of push when possible.
 	repo := fmt.Sprintf("%s.%s", labelDistributionSource, reference.Domain(ref))
 	desc.Annotations = map[string]string{
-		repo: reference.FamiliarName(ref),
+		repo: repo: reference.Path(ref),
 	}
 	return pusher.Push(ctx, desc)
 }
